@@ -1,8 +1,9 @@
 # 🚀 CI/CD Pipeline for Flask Application
 
 **Platform:** Jenkins | Docker | Kubernetes (kind)
+
 **Author:** Rakshit Sen
-**Assessment:** FinacPlus DevOps Internship
+
 **Documentation Format:** Technical Markdown (with Appendix for deep notes)
 
 ---
@@ -454,6 +455,5 @@ It can serve as a foundation for production-grade pipelines using Helm, GitOps, 
 
 🧠 **Maintained by:** Rakshit Sen
 🗓️ **Version:** 1.0
-📁 **File:** `FinacPlus-CICD-Pipeline.md`
 
 ---
