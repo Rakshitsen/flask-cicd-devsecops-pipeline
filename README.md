@@ -1,6 +1,7 @@
-# 🌐 FinacPlus Assessment – Enterprise-Grade CI/CD Pipeline
+# Flask CI/CD Automation with Jenkins, Docker, Kubernetes & Trivy
 
 > A complete **DevSecOps pipeline** built with **Jenkins, Docker, Kubernetes, and Trivy**, automating the software delivery lifecycle from code commit to production rollout.
+> An end-to-end CI/CD automation project demonstrating automated application testing, containerization, vulnerability scanning, image publishing, and multi-environment Kubernetes deployments.
 
 ---
 
@@ -10,11 +11,42 @@
 **Flow:**
 
 ```
-Developer → GitHub → Jenkins → Docker Hub → Kubernetes (dev → stage → prod)
-                     │
-                     ├── Trivy Scan (Security)
-                     ├── Approval Gates (Manual)
-                     └── Health Verification + Audit Logs
+Developer
+    |
+    v
+  GitHub
+    |
+    | Webhook Trigger
+    v
+  Jenkins CI/CD
+    |
+    +---- Source Checkout
+    |
+    +---- Build & Unit Tests (pytest)
+    |
+    +---- Docker Image Build
+    |
+    +---- Trivy Security Scan
+    |
+    +---- Push to Docker Hub
+    |       |
+    |       +---- Capture SHA256 Image Digest
+    |
+    v
+ Kubernetes Deployment
+    |
+    +---- Development
+    |
+    +---- Approval Gate
+    |
+    +---- Staging
+    |
+    +---- Approval Gate
+    |
+    +---- Production
+    |
+    v
+ Health Verification & Deployment Audit
 ```
 
 **Core Components:**
@@ -82,10 +114,12 @@ Developer → GitHub → Jenkins → Docker Hub → Kubernetes (dev → stage �
 
 ### Prerequisites
 
-* Docker & Docker Hub account
-* Jenkins with Docker and kubectl installed
-* Kind or Minikube Kubernetes cluster
-* GitHub repository connected with webhook
+* Jenkins instance with required plugins.
+* Docker Engine.
+* Docker Hub account.
+* Kubernetes cluster using kind or a compatible environment.
+* kubectl CLI.
+* GitHub repository with webhook configuration.
 
 ### Credentials to Configure in Jenkins
 
@@ -155,6 +189,19 @@ All are **fingerprinted and archived** in Jenkins for traceability.
 * Automate everything except trust (manual approval gates).
 * Secure, auditable, rollback-ready delivery.
 * Mirrors real-world DevOps workflows used in production pipelines.
+
+---
+---
+## What This Project Demonstrates
+
+* CI/CD pipeline engineering with Jenkins.
+* Docker-based application delivery.
+* Container vulnerability management.
+* Immutable artifact promotion.
+* Kubernetes deployment automation.
+* Secure credential management.
+* Release approvals and rollback strategies.
+* Build and deployment traceability.
 
 ---
 
